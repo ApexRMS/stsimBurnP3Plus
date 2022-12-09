@@ -1,0 +1,65 @@
+#ApexRMS November 2022
+# stsimBurnP3Plus addon to load external program datasheet that runs BurnP3Plus
+# between each stsim timestep
+
+# Setup ------------------------------------------------------------------------
+
+# Load libraries
+library(rsyncrosim)
+library(raster, quietly = TRUE)
+library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
+library(stringr)
+
+## Setup necessary files and folders -------------------------------------------
+
+## Set working directory from SyncroSim environment
+e <- ssimEnvironment()
+workingDir <- e$TempDirectory
+dir.create(file.path(workingDir), showWarnings = FALSE)
+
+## Load Library, Result Scenario, and Parent Scenario
+myLibrary <- ssimLibrary()
+myScenario <- scenario()
+
+## Ensure Maps have the same extents
+maps <- datasheet(myScenario, name = "stsim_InitialConditionsSpatial")
+
+if (extent(raster(maps$StratumFileName)) != extent(raster(maps$StateClassFileName))){
+  stop("Extents of Stratum and State Class rasters do not match")
+}
+
+if (extent(raster(maps$StateClassFileName)) != extent(raster(maps$AgeFileName))){
+  stop("Extents of State Class and Age rasters do not match")
+}
+
+## Timesteps and Iterations
+runcontrol <- datasheet(myScenario, name = "stsim_RunControl")
+maxtimestep <- runcontrol$MaximumTimestep
+mintimestep <- runcontrol$MinimumTimestep
+maxiteration <- runcontrol$MaximumIteration
+
+iterations <- paste0("1-", maxiteration)
+timesteps <- paste0(mintimestep, "-", maxtimestep)
+
+## Load external Program Datasheet
+
+ExternalDatasheet <- datasheet(myScenario, name = "corestime_External")
+
+rpath <- normalizePath(R.home("bin"), winslash = "/")
+rpath <- str_split(rpath, "x")[[1]]
+rpath <- rpath[1]
+rpath <- paste0(rpath, "Rscript.exe")
+
+path <- path.expand('~')
+path <- str_split(path, "Documents")[[1]]
+path <- path[1]
+burnp3script <- paste0(path, "SyncroSim/Packages/stsimBurnP3Plus/RunBurnP3.R")
+
+if (nrow(ExternalDatasheet) == 0){
+ExternalDatasheet <- addRow(ExternalDatasheet, c(ExecutableName = rpath,
+                              ScriptName = burnp3script,
+                              CallBeforeIterations = iterations, CallBeforeTimesteps = timesteps))
+  }
+
+saveDatasheet(myScenario, data = ExternalDatasheet, name = "corestime_External")
+

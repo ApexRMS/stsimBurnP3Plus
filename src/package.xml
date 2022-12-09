@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package name="stsimBurnP3Plus" displayName="Incorporates BurnP3+ fire simulations into ST-Sim models" isAddOn="True" extendsPackage="stsim" version="1.0.0">
+  <transformers>
+    <transformer name="addonModel" displayName="Prepare BurnP3+ Fire Model" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="RScript" programArguments="addonModel.R" condaEnv="rsyncrosim.yml">
+      <datafeeds>
+        <datafeed name="Settings" displayName="ST-Sim BurnP3+ Settings" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="Settings" displayName="ST-Sim BurnP3+ Settings" isSingleRow="True">
+              <columns>
+                <column name="SettingsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="Library" displayName="BurnP3+ Library" dataType="String" isExternalFile="True" />
+                <column name="SID" displayName="Source Scenario ID (optional)" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" />
+                <column name="TransitionGroup" displayName="Transition Group" dataType="Integer" validationType="Datasheet" formula1="stsim_TransitionGroup" />
+                <column name="StateAttribute" displayName="State Attribute" dataType="Integer" validationType="Datasheet" formula1="stsim_StateAttributeType" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+      </datafeeds>
+    </transformer>
+  </transformers>
+  <layouts>
+    <layout name="coreforms_ScenarioDatafeeds" appendTo="stsim_Advanced">
+      <item name="Settings" />
+    </layout>
+  </layouts>
+  <views />
+</package>

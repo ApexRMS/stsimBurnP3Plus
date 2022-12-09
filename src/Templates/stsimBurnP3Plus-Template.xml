@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template
+  name="stsimBurnP3Plus-Template"
+  displayName="Example Library with stsimBurnP3+"
+  description="
+    {br}Example ST-Sim template Library using the stsimBurnP3+ addon SyncroSim package." 
+  location="https://s3.us-west-2.amazonaws.com/apexrms.com.syncrosim.templates/stsimBurnP3Plus/stsimBurnP3Plus-Template.zip"
+  liveUpdate="True">
+</template>
