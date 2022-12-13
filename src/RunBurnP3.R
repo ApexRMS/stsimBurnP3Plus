@@ -30,16 +30,6 @@ prevTimestep <- timestep - 1
 iteration <- e$BeforeIteration
 
 ## Get external program variable (fuel types layer) ----------------------------
-installedPackages <- package()
-
-if (!"burnP3Plus" %in% installedPackages$name){
-  addPackage("burnP3Plus")
-}
-if (!"burnP3PlusCell2Fire" %in% installedPackages$name){
-  addPackage("burnP3PlusCell2Fire")
-}
-
-
 # Check if output fuel layer was generated 
 stateattributename <- datasheet(stsimScenario, name = "stsimBurnP3Plus_Settings")
 stateattributename <- stateattributename$StateAttribute

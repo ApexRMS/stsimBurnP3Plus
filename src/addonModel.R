@@ -21,6 +21,22 @@ dir.create(file.path(workingDir), showWarnings = FALSE)
 myLibrary <- ssimLibrary()
 myScenario <- scenario()
 
+## Ensure Multiprocessing is setup correctly
+multiprocessing <- datasheet(myScenario, name = "core_Multiprocessing")
+if(multiprocessing$EnableMultiprocessing == TRUE & multiprocessing$EnableCopyExternalFiles == FALSE){
+  stop("'Copy scenario inputs for each job' option must be enabled for multiprocessing")
+}
+
+## Ensure BurnP3+ Package is installed
+installedPackages <- package()
+
+if (!"burnP3Plus" %in% installedPackages$name){
+  stop("BurnP3+ Package must be installed")
+}
+if (!"burnP3PlusCell2Fire" %in% installedPackages$name){
+  stop("burnP3PlusCell2Fire Package must be installed")
+}
+
 ## Ensure Maps have the same extents
 maps <- datasheet(myScenario, name = "stsim_InitialConditionsSpatial")
 

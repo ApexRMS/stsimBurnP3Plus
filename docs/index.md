@@ -31,7 +31,7 @@ This package requires SyncroSim [version 2.4.16](https://syncrosim.com/download/
 
 ## Getting Started
 
-For a guided tutorial on **stsimBurnP3+**, including installation, set up, model run, and output visualization, see [Getting Started](https://apexrms.github.io/stsimBurnP3Plus/getting_started.html).
+For a guided video tutorial on **stsimBurnP3+**, including installation, set up, model run, and output visualization, see [Getting Started](https://apexrms.github.io/stsimBurnP3Plus/getting_started.html).
 
 <br>
 
@@ -46,7 +46,7 @@ Report a bug at
 
 ## Developers
 
-Katie Birchard(Author, maintainer)
+Katie Birchard (Author, maintainer)
 <br>
 Gabrielle Ednie (Author) <a href="https://orcid.org/0000-0003-2832-3015"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
 <br>
