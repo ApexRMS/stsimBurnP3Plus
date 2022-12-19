@@ -22,10 +22,15 @@ permalink: /
 
 ## Requirements
 
-This package requires SyncroSim [version 2.4.16](https://syncrosim.com/download/) or higher. The following packages are also required to use the **ST-Sim BurnP3+** package:
-* [BurnP3+](https://github.com/BurnP3/BurnP3Plus)
-* [BurnP3+Cell2Fire](https://github.com/BurnP3/BurnP3PlusCell2Fire) add-on package
+This package requires SyncroSim [version 2.4.18](https://syncrosim.com/download/) or higher. The following packages are also required to use the **ST-Sim BurnP3+** package:
+* [BurnP3+](https://github.com/BurnP3/BurnP3Plus) and at least one fire growth add-on package (e.g. [BurnP3+Cell2Fire](https://github.com/BurnP3/BurnP3PlusCell2Fire) or [BurnP3+Prometheus](https://github.com/BurnP3/BurnP3PlusPrometheus))
 * [ST-Sim](https://github.com/ApexRMS/stsim)
+
+This package also requires [R](https://cran.r-project.org/bin/windows/base/) version 4.2.2 or higher. The following libraries are also required to use the **ST-Sim BurnP3+** package:
+* [rsyncrosim](https://syncrosim.github.io/rsyncrosim/)
+* [tidyverse](https://www.tidyverse.org/)
+* [terra](https://rspatial.org/index.html)
+* [fs](https://fs.r-lib.org/)
 
 
 <br>

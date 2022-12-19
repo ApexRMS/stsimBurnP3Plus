@@ -6,9 +6,8 @@
 
 # Load libraries
 library(rsyncrosim)
-library(raster, quietly = TRUE)
-library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
-library(stringr)
+library(terra)
+library(tidyverse)
 library(fs)
 
 ## Setup necessary files and folders -------------------------------------------
@@ -41,11 +40,11 @@ if (!"burnP3PlusCell2Fire" %in% installedPackages$name){
 ## Ensure Maps have the same extents
 maps <- datasheet(myScenario, name = "stsim_InitialConditionsSpatial")
 
-if (extent(raster(maps$StratumFileName)) != extent(raster(maps$StateClassFileName))){
+if (ext(rast(maps$StratumFileName)) != ext(rast(maps$StateClassFileName))){
   stop("Extents of Stratum and State Class rasters do not match")
 }
 
-if (extent(raster(maps$StateClassFileName)) != extent(raster(maps$AgeFileName))){
+if (ext(rast(maps$StateClassFileName)) != ext(rast(maps$AgeFileName))){
   stop("Extents of State Class and Age rasters do not match")
 }
 

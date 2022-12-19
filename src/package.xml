@@ -10,7 +10,7 @@
                 <column name="SettingsID" dataType="Integer" isPrimary="True" />
                 <column name="ScenarioID" dataType="Integer" />
                 <column name="Library" displayName="BurnP3+ Library" dataType="String" isExternalFile="True" />
-                <column name="SID" displayName="Source Scenario ID (optional)" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" />
+                <column name="SID" displayName="Scenario ID" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" />
                 <column name="TransitionGroup" displayName="Transition Group" dataType="Integer" validationType="Datasheet" formula1="stsim_TransitionGroup" />
                 <column name="StateAttribute" displayName="State Attribute" dataType="Integer" validationType="Datasheet" formula1="stsim_StateAttributeType" />
               </columns>

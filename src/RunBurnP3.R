@@ -5,9 +5,7 @@
 
 # Load libraries
 library(rsyncrosim)
-library(readr, quietly = TRUE, warn.conflicts = FALSE)
-library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
-library(stringr, quietly = TRUE)
+library(tidyverse)
 
 ## Setup necessary files and folders -------------------------------------------
 
