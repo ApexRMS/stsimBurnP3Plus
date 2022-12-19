@@ -6,7 +6,7 @@ permalink: /
 ---
 
 # **ST-Sim BurnP3+** SyncroSim Package
-<img align="right" style="padding: 13px" width="180" src="assets/images/logo/stsim-BurnP3Plus_large.png">
+<img align="right" style="padding: 13px" width="180" src="assets/images/logo/stsimBurnP3Plus_large.png">
 [![GitHub release](https://img.shields.io/github/v/release/ApexRMS/stsimBurnP3Plus.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/stsimBurnP3Plus/releases/)    <a href="https://github.com/ApexRMS/stsimBurnP3Plus"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png">
 <br>
 
