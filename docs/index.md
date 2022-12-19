@@ -19,7 +19,7 @@ permalink: /
 
 **ST-Sim BurnP3+** is an open-source [SyncroSim](https://syncrosim.com/) add-on package to [**ST-Sim**](https://docs.stsim.net/getting_started/overview.html) that integrates the SyncroSim fire modelling package [**BurnP3+**](https://burnp3.github.io/BurnP3Plus/). The _ST-Sim BurnP3+_ package allows users to design state-and-transition simulations (**ST-Sim**) that incorporate burn probability models (**BurnP3+**) at each timestep of the simulation. The package takes advantage of the _External Program_ functionality in the SyncroSim User Interface to essentially run two SyncroSim Libraries simultaneously. The below figure demonstrates the workflow of a multi-year simulation that models succession and fire using _ST-Sim BurnP3+_:
 
-<img align="middle" style="padding: 1px" width="400" src="assets/images/multi-year-sim-flowchart.png">
+<img align="middle" style="padding: 1px" width="600" src="assets/images/multi-year-sim-flowchart.png">
 
 <br>
 
@@ -30,7 +30,7 @@ This package requires SyncroSim [version 2.4.18](https://syncrosim.com/download/
 - [BurnP3+](https://github.com/BurnP3/BurnP3Plus) and at least one fire growth add-on package (e.g. [BurnP3+Cell2Fire](https://github.com/BurnP3/BurnP3PlusCell2Fire) or [BurnP3+Prometheus](https://github.com/BurnP3/BurnP3PlusPrometheus))
 - [ST-Sim](https://github.com/ApexRMS/stsim)
 
-This package also requires [R](https://cran.r-project.org/bin/windows/base/) version 4.2.2 or higher. The following libraries are also required to use the **ST-Sim BurnP3+** package:
+This package also requires [R version 4.2.2](https://cran.r-project.org/bin/windows/base/) or higher. The following libraries are also required to use the **ST-Sim BurnP3+** package:
 
 - [rsyncrosim](https://syncrosim.github.io/rsyncrosim/)
 - [tidyverse](https://www.tidyverse.org/)
