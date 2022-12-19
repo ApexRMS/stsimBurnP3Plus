@@ -6,6 +6,7 @@ permalink: /
 ---
 
 # **ST-Sim BurnP3+** SyncroSim Package
+
 <img align="right" style="padding: 13px" width="180" src="assets/images/logo/stsimBurnP3Plus_large.png">
 [![GitHub release](https://img.shields.io/github/v/release/ApexRMS/stsimBurnP3Plus.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/stsimBurnP3Plus/releases/)    <a href="https://github.com/ApexRMS/stsimBurnP3Plus"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png">
 <br>
@@ -16,22 +17,25 @@ permalink: /
 
 ## Background
 
-**ST-Sim BurnP3+** was designed as an add-on to the [**ST-Sim**](https://docs.stsim.net/getting_started/overview.html) package as a way of incorporating more accurate fire simulations via the [**BurnP3+**](https://burnp3.github.io/BurnP3Plus/) model. The package allows the users to design state-and-transition simulations (**ST-Sim**) and fire models (**BurnP3+**) and link them together such that both operate in tandem. The models function in a pipeline where the output maps of the state-and-transition simulation model is used as the input maps of the fire model. The output maps of this pipeline are reinserted into the state-and-transition simulation model to start the next timestep.
+**ST-Sim BurnP3+** is an open-source [SyncroSim](https://syncrosim.com/) add-on package to [**ST-Sim**](https://docs.stsim.net/getting_started/overview.html) that integrates the SyncroSim fire modelling package [**BurnP3+**](https://burnp3.github.io/BurnP3Plus/). The _ST-Sim BurnP3+_ package allows users to design state-and-transition simulations (**ST-Sim**) that incorporate burn probability models (**BurnP3+**) at each timestep of the simulation. The package takes advantage of the _External Program_ functionality in the SyncroSim User Interface to essentially run two SyncroSim Libraries simultaneously. The below figure demonstrates the workflow of a multi-year simulation that models succession and fire using _ST-Sim BurnP3+_:
+
+<img align="middle" style="padding: 1px" width="400" src="assets/images/multi-year-sim-flowchart.png">
 
 <br>
 
 ## Requirements
 
 This package requires SyncroSim [version 2.4.18](https://syncrosim.com/download/) or higher. The following packages are also required to use the **ST-Sim BurnP3+** package:
-* [BurnP3+](https://github.com/BurnP3/BurnP3Plus) and at least one fire growth add-on package (e.g. [BurnP3+Cell2Fire](https://github.com/BurnP3/BurnP3PlusCell2Fire) or [BurnP3+Prometheus](https://github.com/BurnP3/BurnP3PlusPrometheus))
-* [ST-Sim](https://github.com/ApexRMS/stsim)
+
+- [BurnP3+](https://github.com/BurnP3/BurnP3Plus) and at least one fire growth add-on package (e.g. [BurnP3+Cell2Fire](https://github.com/BurnP3/BurnP3PlusCell2Fire) or [BurnP3+Prometheus](https://github.com/BurnP3/BurnP3PlusPrometheus))
+- [ST-Sim](https://github.com/ApexRMS/stsim)
 
 This package also requires [R](https://cran.r-project.org/bin/windows/base/) version 4.2.2 or higher. The following libraries are also required to use the **ST-Sim BurnP3+** package:
-* [rsyncrosim](https://syncrosim.github.io/rsyncrosim/)
-* [tidyverse](https://www.tidyverse.org/)
-* [terra](https://rspatial.org/index.html)
-* [fs](https://fs.r-lib.org/)
 
+- [rsyncrosim](https://syncrosim.github.io/rsyncrosim/)
+- [tidyverse](https://www.tidyverse.org/)
+- [terra](https://rspatial.org/index.html)
+- [fs](https://fs.r-lib.org/)
 
 <br>
 
