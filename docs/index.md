@@ -21,7 +21,7 @@ permalink: /
 
 <img align="middle" style="padding: 1px" width="800" src="assets/images/multi-year-sim-flowchart.png">
 
-_<center><span style="font-size:8pt">Green steps correspond to ST-Sim Library components, while orange steps correspond to BurnP3+ Library components. Blue boxes represent transitionary steps linking the ST-Sim and BurnP3+ Libraries.</span></center>_
+_<center>In the flowchart above, green boxes represent ST-Sim Library components, orange boxes represent BurnP3+ Library components, and blue boxes represent transitionary steps linking the ST-Sim and BurnP3+ Libraries</center>_
 
 <br>
 
