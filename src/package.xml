@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package name="stsimBurnP3Plus" displayName="Incorporates BurnP3+ fire simulations into ST-Sim models" isAddOn="True" extendsPackage="stsim" url="https://apexrms.github.io/stsimBurnP3Plus/" version="1.0.0">
+<package name="stsimBurnP3Plus" displayName="Incorporates BurnP3+ fire simulations into ST-Sim models" isAddOn="True" extendsPackage="stsim" url="https://apexrms.github.io/stsimBurnP3Plus/" version="1.0.1">
   <transformers>
     <transformer name="addonModel" displayName="Prepare BurnP3+ Fire Model" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="RScript" programArguments="addonModel.R" condaEnv="rsyncrosim.yml">
       <datafeeds>

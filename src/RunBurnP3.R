@@ -27,6 +27,14 @@ timestep <- e$BeforeTimestep
 prevTimestep <- timestep - 1 
 iteration <- e$BeforeIteration
 
+# Determine whether conda is turned on/off
+stsimLibInfo <- info(stsimLibrary)
+stsimUseConda <- stsimLibInfo %>%
+  filter(property == "Use Conda:") %>%
+  mutate(value = case_when(value == "no" ~ FALSE,
+                           value == "yes" ~ TRUE)) %>%
+  pull(value)
+
 ## Get external program variable (fuel types layer) ----------------------------
 # Check if output fuel layer was generated 
 stateattributename <- datasheet(stsimScenario, name = "stsimBurnP3Plus_Settings")
@@ -60,7 +68,7 @@ libnamestring <- str_split(libnameback, pattern = ".backup")[[1]]
 libname <- libnamestring[1]
 
 burnp3Library <- ssimLibrary(name = file.path(e$TempDirectory, libname),
-                             forceUpdate = TRUE)
+                             forceUpdate = TRUE, useConda = stsimUseConda)
 
 burnp3ScenarioID <- burnp3Settings$SID
 burnp3Scenario <- scenario(burnp3Library, summary = TRUE)

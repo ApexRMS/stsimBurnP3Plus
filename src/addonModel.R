@@ -66,8 +66,7 @@ rpath <- str_split(rpath, "x")[[1]]
 rpath <- rpath[1]
 rpath <- paste0(rpath, "Rscript.exe")
 
-path <- path_home()
-burnp3script <- paste0(path, "/SyncroSim/Packages/stsimBurnP3Plus/RunBurnP3.R")
+burnp3script <- normalizePath(file.path(e$PackageDirectory, "RunBurnP3.R"))
 
 if (nrow(ExternalDatasheet) == 0){
 ExternalDatasheet <- addRow(ExternalDatasheet, c(ExecutableName = rpath,
