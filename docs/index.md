@@ -29,15 +29,15 @@ This package requires SyncroSim <a href ="https://syncrosim.com/download/" targe
 - <a href="https://github.com/ApexRMS/stsim" target="_blank">ST-Sim</a>
 
 To use the **ST-Sim BurnP3+** package, you are required to follow one of the following two options:
+2. Follow the SyncroSim prompt to install the <a href ="https://docs.conda.io/en/latest/" target="_blank">conda</a> 
+ package manager and create the required conda environments upon installation of the **ST-Sim BurnP3+** add-on package; or
+ 
 1. Install the R software <a href ="https://cran.r-project.org/bin/windows/base/" target="_blank">version 4.2.2</a> or higher with the following libraries:
 
 >- <a href ="https://syncrosim.github.io/rsyncrosim/" target="_blank">rsyncrosim</a>
 >- <a href ="https://www.tidyverse.org/" target="_blank">tidyverse</a>
 >- <a href ="https://rspatial.org/index.html" target="_blank">terra</a>
 >- <a href ="https://fs.r-lib.org/" target="_blank">fs</a>
-
-2. Follow the SyncroSim prompt to install the <a href ="https://docs.conda.io/en/latest/" target="_blank">conda</a> 
- package manager and create the required conda environments upon installation of the **ST-Sim BurnP3+** add-on package.
 
 <br>
 
