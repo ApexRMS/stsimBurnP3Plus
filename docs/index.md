@@ -11,7 +11,7 @@ permalink: /
 [![GitHub release](https://img.shields.io/github/v/release/ApexRMS/stsimBurnP3Plus.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/stsimBurnP3Plus/releases/)    <a href="https://github.com/ApexRMS/stsimBurnP3Plus"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png">
 <br>
 
-## **ST-Sim BurnP3+** is an open-source <a href="https://syncrosim.com/" target="_blank">SyncroSim</a> add-on package integrating prcess based fire simulations into <a href="https://docs.stsim.net/getting_started/overview.html" target="_blank">ST-Sim</a> state and transition models.
+## **ST-Sim BurnP3+** is an open-source <a href="https://syncrosim.com/" target="_blank">SyncroSim</a> add-on package integrating process based fire simulations into <a href="https://docs.stsim.net/getting_started/overview.html" target="_blank">ST-Sim</a> state-and-transition simulation models.
 
 <br>
 
