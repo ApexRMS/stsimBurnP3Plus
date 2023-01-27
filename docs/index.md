@@ -11,7 +11,7 @@ permalink: /
 [![GitHub release](https://img.shields.io/github/v/release/ApexRMS/stsimBurnP3Plus.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/stsimBurnP3Plus/releases/)    <a href="https://github.com/ApexRMS/stsimBurnP3Plus"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png">
 <br>
 
-## **ST-Sim BurnP3+** is an open-source <a href="https://syncrosim.com/" target="_blank">SyncroSim</a> add-on package integrating prcess based fire simulations into <a href="https://docs.stsim.net/getting_started/overview.html" target="_blank">ST-Sim</a> state and transition models.
+## **ST-Sim BurnP3+** is an open-source <a href="https://syncrosim.com/" target="_blank">SyncroSim</a> add-on package integrating process based fire simulations into <a href="https://docs.stsim.net/getting_started/overview.html" target="_blank">ST-Sim</a> state-and-transition simulation models.
 
 <br>
 
@@ -29,15 +29,15 @@ This package requires SyncroSim <a href ="https://syncrosim.com/download/" targe
 - <a href="https://github.com/ApexRMS/stsim" target="_blank">ST-Sim</a>
 
 To use the **ST-Sim BurnP3+** package, you are required to follow one of the following two options:
+2. Follow the SyncroSim prompt to install the <a href ="https://docs.conda.io/en/latest/" target="_blank">conda</a> 
+ package manager and create the required conda environments upon installation of the **ST-Sim BurnP3+** add-on package; or
+ 
 1. Install the R software <a href ="https://cran.r-project.org/bin/windows/base/" target="_blank">version 4.2.2</a> or higher with the following libraries:
 
 >- <a href ="https://syncrosim.github.io/rsyncrosim/" target="_blank">rsyncrosim</a>
 >- <a href ="https://www.tidyverse.org/" target="_blank">tidyverse</a>
 >- <a href ="https://rspatial.org/index.html" target="_blank">terra</a>
 >- <a href ="https://fs.r-lib.org/" target="_blank">fs</a>
-
-2. Follow the SyncroSim prompt to install the <a href ="https://docs.conda.io/en/latest/" target="_blank">conda</a> 
- package manager and create the required conda environments upon installation of the **ST-Sim BurnP3+** add-on package.
 
 <br>
 
