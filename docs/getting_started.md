@@ -13,9 +13,9 @@ permalink: /getting_started
 ## **ST-Sim BurnP3+** Quickstart Tutorial
 
 The video quickstart tutorial below will introduce you to the basics of working with **ST-Sim BurnP3+**. You will learn about:
-* *Package* installation, 
-* Setting up model inputs,
-* Running the model,
+* *Package* installation; 
+* Setting up model inputs;
+* Running the model;
 * Visualizing model outputs
 
 <br>
