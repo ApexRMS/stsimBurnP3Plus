@@ -13,10 +13,10 @@ permalink: /getting_started
 ## **ST-Sim BurnP3+** Quickstart Tutorial
 
 The video quickstart tutorial below will introduce you to the basics of working with **ST-Sim BurnP3+**. You will learn about:
-> * *Package* installation, 
-> * Setting up model inputs,
-> * Running the model,
-> * Visualizing model outputs
+* *Package* installation, 
+* Setting up model inputs,
+* Running the model,
+* Visualizing model outputs
 
 <br>
 
@@ -32,7 +32,7 @@ Running **ST-Sim BurnP3+** requires that the SyncroSim software be installed on 
 
 ## Additional Resources
 
-> * Introduction to <a href="https://docs.syncrosim.com/getting_started/overview.html" target="_blank">SyncroSim</a> <br>
-> * BurnP3+ <a href="https://burnp3.github.io/BurnP3Plus/tutorials" target="_blank">video tutorial</a> <br>
-> * BurnP3+ <a href="https://burnp3.github.io/BurnP3Plus/getting_started.html" target="_blank">getting started</a> page <br>
-> * <a href="https://docs.stsim.net/" target="_blank">ST-Sim documentation</a> website
+* Introduction to <a href="https://docs.syncrosim.com/getting_started/overview.html" target="_blank">SyncroSim</a> <br>
+* BurnP3+ <a href="https://burnp3.github.io/BurnP3Plus/tutorials" target="_blank">video tutorial</a> <br>
+* BurnP3+ <a href="https://burnp3.github.io/BurnP3Plus/getting_started.html" target="_blank">getting started</a> page <br>
+* <a href="https://docs.stsim.net/" target="_blank">ST-Sim documentation</a> website
