@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting started with ST-Sim BurnP3+
+title: Getting Started
 permalink: /getting_started
 ---
 
