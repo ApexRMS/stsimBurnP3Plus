@@ -43,7 +43,7 @@ To use the **ST-Sim BurnP3+** package, you are required to follow one of the fol
 
 ## Getting Started
 
-For a guided tutorial on **ST-Sim BurnP3+**, including installation, set up, model run, and output visualization, see this video tutorial.
+For a guided tutorial on **ST-Sim BurnP3+**, including installation, set up, model run, and output visualization, see this [video tutorial](https://apexrms.github.io/stsimBurnP3Plus/getting_started.html).
 
 <br>
 
