@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-description: "Landing page for the ST-Sim BurnP3+ package"
+description: "SyncroSim add-on package that adds process based fire simulations to ST-Sim"
 permalink: /
 ---
 
@@ -17,7 +17,7 @@ permalink: /
 
 ## Background
 
-**ST-Sim BurnP3+** is an open-source <a href="https://syncrosim.com/" target="_blank">SyncroSim</a> add-on package to <a href="https://docs.stsim.net/getting_started/overview.html" target="_blank">ST-Sim</a> that integrates the <a href="https://burnp3.github.io/BurnP3Plus/" target="_blank">BurnP3+</a> fire modelling package. **ST-Sim BurnP3+** dynamically links ST-Sim state-and-transition simulation models (STSMs) with BurnP3+ ignition, weather and fire growth simulations every timestep. This linkage incorporates more realistic fire perimeters into multi-year simulations of vegetation succession and disturbance.
+**ST-Sim BurnP3+** dynamically links ST-Sim state-and-transition simulation models (STSMs) with <a href="https://burnp3.github.io/BurnP3Plus/" target="_blank">BurnP3+</a> ignition, weather and fire growth simulations. This linkage incorporates more realistic fire perimeters into multi-year simulations of vegetation succession and disturbance.
 
 <br>
 
