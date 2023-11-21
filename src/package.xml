@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package name="stsimBurnP3Plus" displayName="Incorporates BurnP3+ fire simulations into ST-Sim models" isAddOn="True" extendsPackage="stsim" url="https://apexrms.github.io/stsimBurnP3Plus/" version="1.0.2">
+<package name="stsimBurnP3Plus" displayName="Incorporates BurnP3+ fire simulations into ST-Sim models" isAddOn="True" extendsPackage="stsim" url="https://apexrms.github.io/stsimBurnP3Plus/" version="1.0.3">
   <transformers>
-    <transformer name="addonModel" displayName="Prepare BurnP3+ Fire Model" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="RScript" programArguments="addonModel.R" condaEnv="rsyncrosim.yml">
+    <transformer name="addonModel" displayName="Prepare BurnP3+ Fire Model" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="RScript" programArguments="addonModel.R">
       <datafeeds>
         <datafeed name="Settings" displayName="ST-Sim BurnP3+ Settings" dataScope="Scenario">
           <datasheets>
@@ -10,6 +10,7 @@
                 <column name="SettingsID" dataType="Integer" isPrimary="True" />
                 <column name="ScenarioID" dataType="Integer" />
                 <column name="Library" displayName="BurnP3+ Library" dataType="String" isExternalFile="True" />
+                <column name="UpdateLibrary" displayName="Update BurnP3+ Library" dataType="Boolean" />
                 <column name="SID" displayName="Scenario ID" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" />
                 <column name="TransitionGroup" displayName="Transition Group" dataType="Integer" validationType="Datasheet" formula1="stsim_TransitionGroup" />
                 <column name="StateAttribute" displayName="State Attribute" dataType="Integer" validationType="Datasheet" formula1="stsim_StateAttributeType" />
@@ -26,4 +27,10 @@
     </layout>
   </layouts>
   <views />
+  <updateProvider
+    schemaVersion="1"
+    minPackageVersion="1.0.0"
+    className="SyncroSim.Core.XMLUpdateProvider"
+    classAssembly="SyncroSim.Core">
+  </updateProvider>
 </package>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<update>
+  
+  <action code="Exec" condition="TableExists" criteria="stsimBurnP3Plus_Settings">
+    <item>ALTER TABLE stsimBurnP3Plus_Settings ADD COLUMN UpdateLibrary TEXT</item>
+  </action>
+
+</update>

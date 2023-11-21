@@ -1,3 +1,5 @@
 *.ssimdebug
 /.vs/slnx.sqlite
 /.vs/ProjectSettings.json
+.Rhistory
+*.ssim.output

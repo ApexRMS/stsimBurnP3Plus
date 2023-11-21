@@ -1,4 +1,4 @@
-#ApexRMS November 2022
+# ApexRMS November 2022
 # stsimBurnP3Plus addon to load external program datasheet that runs BurnP3Plus
 # between each stsim timestep
 
@@ -9,6 +9,7 @@ library(rsyncrosim)
 library(terra)
 library(tidyverse)
 library(fs)
+library(filesstrings)
 
 ## Setup necessary files and folders -------------------------------------------
 
@@ -35,6 +36,42 @@ if (!"burnP3Plus" %in% installedPackages$name){
 }
 if (!"burnP3PlusCell2Fire" %in% installedPackages$name){
   stop("burnP3PlusCell2Fire Package must be installed")
+}
+
+## Update BurnP3+ Library if option selected
+burnp3Settings <- datasheet(myScenario, name = "stsimBurnP3Plus_Settings")
+updateLibrary <- burnp3Settings$UpdateLibrary
+if (is.na(updateLibrary)){
+  updateLibrary <- FALSE
+}
+
+if (updateLibrary){
+  burnp3LibraryName <- burnp3Settings$Library
+  
+  unzip(burnp3LibraryName, exdir = e$TempDirectory, overwrite = TRUE)
+  libpathlist <- str_split(burnp3LibraryName, pattern = "\\\\")[[1]]
+  libnameback <- libpathlist[length(libpathlist)]
+  libnamestring <- str_split(libnameback, pattern = ".backup")[[1]]
+  libname <- libnamestring[1]
+  
+  # Update library
+  args <- list(update = NULL, lib = file.path(e$TempDirectory, libname))
+  output <- command(args)
+  
+  # Create new backup
+  args <- list(backup = NULL, lib = file.path(e$TempDirectory, libname),
+               input = NULL, output = NULL)
+  output <- command(args)
+  
+  # Replace old ssimbak with new ssimbak
+  oldBackupFolder <- file.path(e$TempDirectory, paste0(libname, ".backup"))
+  backupFiles <- list.files(oldBackupFolder)
+  oldBackupFile <- backupFiles[length(backupFiles)]
+  oldBackupPath <- file.path(oldBackupFolder, oldBackupFile)
+  
+  file.move(oldBackupPath, dirname(burnp3LibraryName))
+  file.remove(burnp3LibraryName)
+  file.rename(file.path(dirname(burnp3LibraryName), oldBackupFile), burnp3LibraryName)
 }
 
 ## Ensure Maps have the same extents

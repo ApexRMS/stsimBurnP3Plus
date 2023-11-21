@@ -29,11 +29,6 @@ iteration <- e$BeforeIteration
 
 # Determine whether conda is turned on/off
 stsimLibInfo <- info(stsimLibrary)
-stsimUseConda <- stsimLibInfo %>%
-  filter(property == "Use Conda:") %>%
-  mutate(value = case_when(value == "no" ~ FALSE,
-                           value == "yes" ~ TRUE)) %>%
-  pull(value)
 
 ## Get external program variable (fuel types layer) ----------------------------
 # Check if output fuel layer was generated 
@@ -68,7 +63,7 @@ libnamestring <- str_split(libnameback, pattern = ".backup")[[1]]
 libname <- libnamestring[1]
 
 burnp3Library <- ssimLibrary(name = file.path(e$TempDirectory, libname),
-                             forceUpdate = TRUE, useConda = stsimUseConda)
+                             forceUpdate = TRUE, useConda = FALSE)
 
 burnp3ScenarioID <- burnp3Settings$SID
 burnp3Scenario <- scenario(burnp3Library, summary = TRUE)
@@ -96,10 +91,11 @@ burnp3Results <- run(burnp3Scenario, copyExternalInputs = TRUE)
 ## Load fire probability raster into ST-Sim library ----------------------------
 
 # Probably need to put this in another folder so it doesn't get deleted with library close/overwrite
-burnp3BurnProbRaster <- datasheetRaster(
+burnp3BurnProbRaster <- datasheet(
   burnp3Results,
-  datasheet = "burnP3Plus_OutputBurnProbability") %>%
-  raster::filename()
+  name = "burnP3Plus_OutputBurnProbability") %>%
+  filter(Season == "All") %>%
+  pull(FileName)
 
 burnp3BurnProbRasterNewName <- file.path(burnProbOutputDir, 
                                          burnp3BurnProbRaster %>%
