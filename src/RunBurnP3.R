@@ -4,8 +4,8 @@
 # Setup ------------------------------------------------------------------------
 
 # Load libraries
-library(rsyncrosim)
-library(tidyverse)
+suppressWarnings(suppressPackageStartupMessages(library(rsyncrosim)))
+suppressWarnings(suppressPackageStartupMessages(library(tidyverse)))
 
 ## Setup necessary files and folders -------------------------------------------
 
@@ -45,24 +45,26 @@ if (nrow(outputFuelSheet) == 0){
   quit()
 }
 
-updatedFuelMapPath <- datasheetRaster(
+updatedFuelMapPath <- datasheetSpatRaster(
   stsimScenario, 
   datasheet = fuelMapDatasheet,
   timestep = prevTimestep,
   iteration = iteration) %>%
-  raster::filename()
+  terra::sources()
 
 ## Load BurnP3 template Library from add-on package ----------------------------
 burnp3Settings <- datasheet(stsimScenario, name = "stsimBurnP3Plus_Settings")
 burnp3LibraryName <- burnp3Settings$Library
 
-unzip(burnp3LibraryName, exdir = e$TempDirectory, overwrite = TRUE)
+# Do not want to overwrite previous libraries as this will cause issues with
+# multiprocessing
+unzip(burnp3LibraryName, exdir = workingDir, overwrite = TRUE)
 libpathlist <- str_split(burnp3LibraryName, pattern = "\\\\")[[1]]
 libnameback <- libpathlist[length(libpathlist)]
 libnamestring <- str_split(libnameback, pattern = ".backup")[[1]]
 libname <- libnamestring[1]
 
-burnp3Library <- ssimLibrary(name = file.path(e$TempDirectory, libname),
+burnp3Library <- ssimLibrary(name = file.path(workingDir, libname),
                              forceUpdate = TRUE, useConda = FALSE)
 
 burnp3ScenarioID <- burnp3Settings$SID
@@ -90,12 +92,17 @@ burnp3Results <- run(burnp3Scenario, copyExternalInputs = TRUE)
 
 ## Load fire probability raster into ST-Sim library ----------------------------
 
-# Probably need to put this in another folder so it doesn't get deleted with library close/overwrite
+# Probably need to put this in another folder so it doesn't get deleted with 
+# library close/overwrite
 burnp3BurnProbRaster <- datasheet(
   burnp3Results,
   name = "burnP3Plus_OutputBurnProbability") %>%
   filter(Season == "All") %>%
   pull(FileName)
+
+if (is.null(burnp3BurnProbRaster)){
+  stop("burnP3 Probability Raster does not exist")
+}
 
 burnp3BurnProbRasterNewName <- file.path(burnProbOutputDir, 
                                          burnp3BurnProbRaster %>%
@@ -112,6 +119,10 @@ file.copy(burnp3BurnProbRaster, burnp3BurnProbRasterNewName, #keep overwrite
 
 transitiongroupname <- datasheet(stsimScenario, name = "stsimBurnP3Plus_Settings")
 transitiongroupname <- transitiongroupname$TransitionGroup
+
+updateRunLog(paste0("Timestep: ", timestep, "\r\n",
+                    "Iteration: ", iteration, "\r\n",
+                    "TransitionGroup: ", transitiongroupname))
 
 stsimTransitionSpatialMult <- data.frame(
   "Timestep" = timestep, "Iteration" = iteration,
