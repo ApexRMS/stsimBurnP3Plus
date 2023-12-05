@@ -96,7 +96,7 @@ burnp3Results <- run(burnp3Scenario, copyExternalInputs = TRUE)
 # library close/overwrite
 burnp3BurnProbRaster <- datasheet(
   burnp3Results,
-  name = "burnP3Plus_OutputBurnProbability") %>%
+  name = "burnP3Plus_OutputBurnMap") %>%
   filter(Season == "All") %>%
   pull(FileName)
 
@@ -121,6 +121,9 @@ transitiongroupname <- datasheet(stsimScenario, name = "stsimBurnP3Plus_Settings
 transitiongroupname <- transitiongroupname$TransitionGroup
 
 updateRunLog(paste0("Timestep: ", timestep, "\r\n",
+                    "Iteration: ", iteration, "\r\n",
+                    "TransitionGroup: ", transitiongroupname))
+print(paste0("Timestep: ", timestep, "\r\n",
                     "Iteration: ", iteration, "\r\n",
                     "TransitionGroup: ", transitiongroupname))
 
