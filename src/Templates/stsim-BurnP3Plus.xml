@@ -4,6 +4,6 @@
   displayName="ST-Sim BurnP3+"
   description="
     {br}Example library simulating ST-Sim fire events with the BurnP3+ SyncroSim package." 
-  location="https://s3.us-west-2.amazonaws.com/apexrms.com.syncrosim.templates/stsimBurnP3Plus/v1.0.2/stsim-BurnP3Plus.zip"
+  location="https://s3.us-west-2.amazonaws.com/apexrms.com.syncrosim.templates/stsimBurnP3Plus/v1.0.4/stsim-BurnP3Plus.zip"
   liveUpdate="True">
 </template>

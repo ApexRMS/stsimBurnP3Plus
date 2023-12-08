@@ -1,4 +1,0 @@
-# Syncrosim Generated Transition Group (Fuel Treatment [Type]) Color Map (QGIS-compatible) Export File,,,,,
-INTERPOLATION:EXACT
-1,0,0,0,255,Fuel Treatment
-0,232,232,232,255,No Occurrence
